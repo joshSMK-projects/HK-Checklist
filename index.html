@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="hklogo.png">
+        <link rel="stylesheet" href="index.css">
+        <title>Hollow Knight Progress Checker</title>
+    </head>
+    
+    <body>
+        <header>
+          <h1>Hollow Knight Progress Checker</h1>
+          <h2>Progress: <span id="percent">0</span>%</h2>
+          <button id="reset" onclick="reset()">RESET</button>
+        </header>
+
+        <!--Lists give auto tab-->
+        <main>
+          <div id="left">
+            <div id="charms">
+              <h2>Charms</h2>
+              <ul>
+                <li>            
+                  <input type="checkbox" id="Wayword Compass" name="Wayword Compass" onclick="render('Wayword Compass')"> <!--don't need to supply the second value WILL be undefined similar forEach or find-->
+                  <label for="Wayword Compass">Wayword Compass</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Gathering Swarm" name="Gathering Swarm" onclick="render('Gathering Swarm')">
+                  <label for="Gathering Swarm">Gathering Swarm</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Stalwart Shell" name="Stalwart Shell" onclick="render('Stalwart Shell')">
+                  <label for="Stalwart Shell">Stalwart Shell</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Soul Catcher" name="Soul Catcher" onclick="render('Soul Catcher')">
+                  <label for="Soul Catcher">Soul Catcher</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Shaman Stone" name="Shaman Stone" onclick="render('Shaman Stone')">
+                  <label for="Shaman Stone">Shaman Stone</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Soul Eater" name="Soul Eater" onclick="render('Soul Eater')">
+                  <label for="Soul Eater">Soul Eater</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Dashmaster" name="Dashmaster" onclick="render('Dashmaster')">
+                  <label for="Dashmaster">Dashmaster</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Sprintmaster" name="Sprintmaster" onclick="render('Sprintmaster')">
+                  <label for="Sprintmaster">Sprintmaster</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Grubsong" name="Grubsong" onclick="render('Grubsong')">
+                  <label for="Grubsong">Grubsong</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Grubberfly's Elegy" name="Grubberfly's Elegy" onclick="render('Grubberfly\'s Elegy')">
+                  <label for="Grubberfly's Elegy">Grubberfly's Elegy</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Fragile Heart" name="Fragile Heart" onclick="render('Fragile Heart')">
+                  <label for="Fragile Heart">Fragile Heart</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Fragile Greed" name="Fragile Greed" onclick="render('Fragile Greed')">
+                  <label for="Fragile Greed">Fragile Greed</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Fragile Strength" name="Fragile Strength" onclick="render('Fragile Strength')">
+                  <label for="Fragile Strength">Fragile Strength</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Spell Twister" name="Spell Twister" onclick="render('Spell Twister')">
+                  <label for="Spell Twister">Spell Twister</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Steady Body" name="Steady Body" onclick="render('Steady Body')">
+                  <label for="Steady Body">Steady Body</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Heavy Blow" name="Heavy Blow" onclick="render('Heavy Blow')">
+                  <label for="Heavy Blow">Heavy Blow</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Quick Slash" name="Quick Slash" onclick="render('Quick Slash')">
+                  <label for="Quick Slash">Quick Slash</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Longnail" name="Longnail" onclick="render('Longnail')">
+                  <label for="Longnail">Longnail</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Mark of Pride" name="Mark of Pride" onclick="render('Mark of Pride')">
+                  <label for="Mark of Pride">Mark of Pride</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Fury of the Fallen" name="Fury of the Fallen" onclick="render('Fury of the Fallen')">
+                  <label for="Fury of the Fallen">Fury of the Fallen</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Thorns of Agony" name="Thorns of Agony" onclick="render('Thorns of Agony')">
+                  <label for="Thorns of Agony">Thorns of Agony</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Baldur Shell" name="Baldur Shell" onclick="render('Baldur Shell')">
+                  <label for="Baldur Shell">Baldur Shell</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Flukenest" name="Flukenest" onclick="render('Flukenest')">
+                  <label for="Flukenest">Flukenest</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Defender's Crest" name="Defender's Crest" onclick="render('Defender\'s Crest')">
+                  <label for="Defender's Crest">Defender's Crest</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Glowing Womb" name="Glowing Womb" onclick="render('Glowing Womb')">
+                  <label for="Glowing Womb">Glowing Womb</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Quick Focus" name="Quick Focus" onclick="render('Quick Focus')">
+                  <label for="Quick Focus">Quick Focus</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Deep Focus" name="Deep Focus" onclick="render('Deep Focus')">
+                  <label for="Deep Focus">Deep Focus</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Lifeblood Heart" name="Lifeblood Heart" onclick="render('Lifeblood Heart')">
+                  <label for="Lifeblood Heart">Lifeblood Heart</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Lifeblood Core" name="Lifeblood Core" onclick="render('Lifeblood Core')">
+                  <label for="Lifeblood Core">Lifeblood Core</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Joni's Blessing" name="Joni's Blessing" onclick="render('Joni\'s Blessing')">
+                  <label for="Joni's Blessing">Joni's Blessing</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Hiveblood" name="Hiveblood" onclick="render('Hiveblood')">
+                  <label for="Hiveblood">Hiveblood</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Spore Shroom" name="Spore Shroom" onclick="render('Spore Shroom')">
+                  <label for="Spore Shroom">Spore Shroom</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Sharp Shadow" name="Sharp Shadow" onclick="render('Sharp Shadow')">
+                  <label for="Sharp Shadow">Sharp Shadow</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Shape of Unn" name="Shape of Unn" onclick="render('Shape of Unn')">
+                  <label for="Shape of Unn">Shape of Unn</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Nailmaster's Glory" name="Nailmaster's Glory" onclick="render('Nailmaster\'s Glory')">
+                  <label for="Nailmaster's Glory">Nailmaster's Glory</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Weaversong" name="Weaversong" onclick="render('Weaversong')">
+                  <label for="Weaversong">Weaversong</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Dream Wielder" name="Dream Wielder" onclick="render('Dream Wielder')">
+                  <label for="Dream Wielder">Dream Wielder</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Dreamshield" name="Dreamshield" onclick="render('Dreamshield')">
+                  <label for="Dreamshield">Dreamshield</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Grimmchild" name="Grimmchild" onclick="render('Grimmchild')">
+                  <label for="Grimmchild">Grimmchild</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Kingsoul" name="Kingsoul" onclick="render('Kingsoul')">
+                  <label for="Kingsoul">Kingsoul</label>
+                </li>
+              </ul>  
+            </div>
+
+            <div id="abilities">
+              <h2>Abilities</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Mothwing Cloak (Left)" name="Mothwing Cloak (Left)" onclick="render('Mothwing Cloak (Left)')">
+                  <label for="Mothwing Cloak (Left)">Mothwing Cloak (Left)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Mothwing Cloak (Right)" name="Mothwing Cloak (Right)" onclick="render('Mothwing Cloak (Right)')">
+                  <label for="Mothwing Cloak (Right)">Mothwing Cloak (Right)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Mantis Claw (Left)" name="Mantis Claw (Left)" onclick="render('Mantis Claw (Left)')">
+                  <label for="Mantis Claw (Left)">Mantis Claw (Left)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Mantis Claw (Right)" name="Mantis Claw (Right)" onclick="render('Mantis Claw (Right)')">
+                  <label for="Mantis Claw (Right)">Mantis Claw (Right)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Crystal Heart (Left)" name="Crystal Heart (Left)" onclick="render('Crystal Heart (Left)')">
+                  <label for="Crystal Heart (Left)">Crystal Heart (Left)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Crystal Heart (Right)" name="Crystal Heart (Right)" onclick="render('Crystal Heart (Right)')">
+                  <label for="Crystal Heart (Right)">Crystal Heart (Right)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Isma's Tear" name="Isma's Tear" onclick="render('Isma\'s Tear')">
+                  <label for="Isma's Tear">Isma's Tear</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="King's Brand" name="King's Brand" onclick="render('King\'s Brand')">
+                  <label for="King's Brand">King's Brand</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Monarch Wings" name="Monarch Wings" onclick="render('Monarch Wings')">
+                  <label for="Monarch Wings">Monarch Wings</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Shade Cloak" name="Shade Cloak" onclick="render('Shade Cloak')">
+                  <label for="Shade Cloak">Shade Cloak</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="nail_upgrades">
+              <h2>Nail Upgrades</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Sharpened" name="Sharpened" onclick="render('Sharpened')">
+                  <label for="Sharpened">Sharpened</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Channelled" name="Channelled" onclick="render('Channelled')">
+                  <label for="Channelled">Channelled</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Coiled" name="Coiled" onclick="render('Coiled')">
+                  <label for="Coiled">Coiled</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Pure" name="Pure" onclick="render('Pure')">
+                  <label for="Pure">Pure</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="nail_arts">
+              <h2>Nail Arts</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Great Slash" name="Great Slash" onclick="render('Great Slash')">
+                  <label for="Great Slash">Great Slash</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Dash Slash" name="Dash Slash" onclick="render('Dash Slash')">
+                  <label for="Dash Slash">Dash Slash</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Cyclone Slash" name="Cyclone Slash" onclick="render('Cyclone Slash')">
+                  <label for="Cyclone Slash">Cyclone Slash</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="colosseum">
+              <h2>Colosseum</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Trial of the Warrior" name="Trial of the Warrior" onclick="render('Trial of the Warrior')">
+                  <label for="Trial of the Warrior">Trial of the Warrior</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Trial of the Conqueror" name="Trial of the Conqueror" onclick="render('Trial of the Conqueror')">
+                  <label for="Trial of the Conqueror">Trial of the Conqueror</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Trial of the Fool" name="Trial of the Fool" onclick="render('Trial of the Fool')">
+                  <label for="Trial of the Fool">Trial of the Fool</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="other">
+              <h2>Other</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Swim Ability" name="Swim Ability">
+                  <label for="Swim Ability">Swim Ability</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Tram Pass" name="Tram Pass">
+                  <label for="Tram Pass">Tram Pass</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Elevator Pass" name="Elevator Pass">
+                  <label for="Elevator Pass">Elevator Pass</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="right">
+            <div id="spells">
+              <h2>Spells</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Vengeful Spirit" name="Vengeful Spirit" onclick="render('Vengeful Spirit')">
+                  <label for="Vengeful Spirit">Vengeful Spirit</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Shade Soul" name="Shade Soul" onclick="render('Shade Soul')">
+                  <label for="Shade Soul">Shade Soul</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Desolate Dive" name="Desolate Dive" onclick="render('Desolate Dive')">
+                  <label for="Desolate Dive">Desolate Dive</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Descending Dark" name="Descending Dark" onclick="render('Descending Dark')">
+                  <label for="Descending Dark">Descending Dark</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Howling Wraiths" name="Howling Wraiths" onclick="render('Howling Wraiths')">
+                  <label for="Howling Wraiths">Howling Wraiths</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Abyss Shriek" name="Abyss Shriek" onclick="render('Abyss Shriek')">
+                  <label for="Abyss Shriek">Abyss Shriek</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="bosses">
+              <h2>Bosses</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Broken Vessel" name="Broken Vessel" onclick="render('Broken Vessel')">
+                  <label for="Broken Vessel">Broken Vessel</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Brooding Mawlek" name="Brooding Mawlek" onclick="render('Brooding Mawlek')">
+                  <label for="Brooding Mawlek">Brooding Mawlek</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="The Collector" name="The Collector" onclick="render('The Collector')">
+                  <label for="The Collector">The Collector</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Dung Defender" name="Dung Defender" onclick="render('Dung Defender')">
+                  <label for="Dung Defender">Dung Defender</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="False Knight" name="False Knight" onclick="render('False Knight')">
+                  <label for="False Knight">False Knight</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Grimm" name="Grimm" onclick="render('Grimm')">
+                  <label for="Grimm">Grimm</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Gruz Mother" name="Gruz Mother" onclick="render('Gruz Mother')">
+                  <label for="Gruz Mother">Gruz Mother</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Hive Knight" name="Hive Knight" onclick="render('Hive Knight')">
+                  <label for="Hive Knight">Hive Knight</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Hornet (Greenpath)" name="Hornet (Greenpath)" onclick="render('Hornet (Greenpath)')">
+                  <label for="Hornet (Greenpath)">Hornet (Greenpath)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Hornet (Cast-Off Shell)" name="Hornet (Cast-Off Shell)" onclick="render('Hornet (Cast-Off Shell)')">
+                  <label for="Hornet (Cast-Off Shell)">Hornet (Cast-Off Shell)</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Mantis Lords" name="Mantis Lords" onclick="render('Mantis Lords')">
+                  <label for="Mantis Lords">Mantis Lords</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Nosk" name="Nosk" onclick="render('Nosk')">
+                  <label for="Nosk">Nosk</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Soul Master" name="Soul Master" onclick="render('Soul Master')">
+                  <label for="Soul Master">Soul Master</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Traitor Lord" name="Traitor Lord" onclick="render('Traitor Lord')">
+                  <label for="Traitor Lord">Traitor Lord</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Uumuu" name="Uumuu" onclick="render('Uumuu')">
+                  <label for="Uumuu">Uumuu</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Watcher Knights" name="Watcher Knights" onclick="render('Watcher Knights')">
+                  <label for="Watcher Knights">Watcher Knights</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="dream_nail">
+              <h2>Dream Nail</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Dream Nail" name="Dream Nail" onclick="render('Dream Nail')">
+                  <label for="Dream Nail">Dream Nail</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Awaken the Dream Nail" name="Awaken the Dream Nail" onclick="render('Awaken the Dream Nail')">
+                  <label for="Awaken the Dream Nail">Awaken the Dream Nail</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Seer's Final Words" name="Seer's Final Words" onclick="render('Seer\'s Final Words')">
+                  <label for="Seer's Final Words">Seer's Final Words</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="dreamers">
+              <h2>Dreamers</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Lurien" name="Lurien" onclick="render('Lurien')">
+                  <label for="Lurien">Lurien</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Monomon" name="Monomon" onclick="render('Monomon')">
+                  <label for="Monomon">Monomon</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Herrah" name="Herrah" onclick="render('Herrah')">
+                  <label for="Herrah">Herrah</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Galien" name="Galien" onclick="render('Galien')">
+                  <label for="Galien">Galien</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Marmu" name="Marmu" onclick="render('Marmu')">
+                  <label for="Marmu">Marmu</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Markoth" name="Markoth" onclick="render('Markoth')">
+                  <label for="Markoth">Markoth</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Xero" name="Xero" onclick="render('Xero')">
+                  <label for="Xero">Xero</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="No Eyes" name="No Eyes" onclick="render('No Eyes')">
+                  <label for="No Eyes">No Eyes</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Elder Hu" name="Elder Hu" onclick="render('Elder Hu')">
+                  <label for="Elder Hu">Elder Hu</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Gorb" name="Gorb" onclick="render('Gorb')">
+                  <label for="Gorb">Gorb</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Nightmare King Grimm" name="Nightmare King Grimm" onclick="render('Nightmare King Grimm')">
+                  <label for="Nightmare King Grimm">Nightmare King Grimm</label>
+                </li>
+              </ul>
+            </div>
+
+            <div id="mask_shards">
+              <h2>Mask Shards (16)</h2>
+              <h3 id="Shards">0</h3>
+              <button id="shard_plus" onclick="render('Shards', '+')">+</button>
+              <button id="shard_minus" onclick="render('Shards', '-')" disabled>-</button>
+            </div>
+
+            <div id="vessel_fragments">
+              <h2>Vessel Fragments (9)</h2>
+              <h3 id="Fragments">0</h3>
+              <button id="frag_plus" onclick="render('Fragments', '+')">+</button>
+              <button id="frag_minus" onclick="render('Fragments', '-')" disabled>-</button>
+            </div>
+
+            <div id="godhome">
+              <h2>Godhome</h2>
+              <ul>
+                <li>
+                  <input type="checkbox" id="Find Godhome" name="Find Godhome" onclick="render('Find Godhome')">
+                  <label for="Find Godhome">Find Godhome</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Pantheon of the Master" name="Pantheon of the Master" onclick="render('Pantheon of the Master')">
+                  <label for="Pantheon of the Master">Pantheon of the Master</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Pantheon of the Artist" name="Pantheon of the Artist" onclick="render('Pantheon of the Artist')">
+                  <label for="Pantheon of the Artist">Pantheon of the Artist</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Pantheon of the Sage" name="Pantheon of the Sage" onclick="render('Pantheon of the Sage')">
+                  <label for="Pantheon of the Sage">Pantheon of the Sage</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="Pantheon of the Knight" name="Pantheon of the Knight" onclick="render('Pantheon of the Knight')">
+                  <label for="Pantheon of the Knight">Pantheon of the Knight</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </main>
+
+    <script src="index.js"></script>
+    </body>
+</html>

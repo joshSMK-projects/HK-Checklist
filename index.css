@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+}
+
+button#reset {
+    position: relative;
+    bottom: 5px;
+}
+
+/*Using flexbox (good video): https://www.youtube.com/watch?v=fYq5PXgSsbE*/
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /*in conj. with flex to center around the main axis*/
+    /*center around the cross axis use align-items*/
+    margin: 0 20%;
+}
+
+#left, #right {
+    position: relative;
+    left: 0px;
+    background-color: pink;
+    width: 50%;
+}
+
+ul {
+    list-style-type: none;
+}
+
