@@ -16,8 +16,25 @@ header, main {
 }
 
 header { 
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
     background-color: aqua;
+    border: 4px solid black;
+}
+
+header div#image {
+    width: 200px;
+    height: 200px;
+    background-image: url('seal.jpg');
+    background-size: cover;
+    margin: 1%;
+    border: 4px solid black;
+}
+
+header img {
+    background-size: cover;
 }
 
 button#reset {
@@ -26,6 +43,13 @@ button#reset {
     background-color: black;
     color: white;
     border-radius: 5px;
+    width: 100px;
+}
+
+button#reset:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }
 
 /*Using flexbox (good video): https://www.youtube.com/watch?v=fYq5PXgSsbE*/
@@ -36,8 +60,6 @@ main {
     /*center around the cross axis use align-items*/
     background-color: pink;
     border: 4px solid black;
-    border-radius: 5px;
-
 }
 
 #left, #right {
@@ -45,6 +67,10 @@ main {
     left: 0px;
     width: 50%;
     padding: 1%;
+}
+
+#left {
+    border-right: 4px solid black;
 }
 
 ul {
@@ -63,4 +89,8 @@ ul {
 
 #right button:disabled {
     border: none;
+}
+
+li {
+    font-size: 22px;
 }

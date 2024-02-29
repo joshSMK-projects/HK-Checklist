@@ -11,9 +11,13 @@
     
     <body>
         <header>
-          <h1>Hollow Knight Progress Checker</h1>
-          <h2>Progress: <span id="percent">0</span>%</h2>
-          <button id="reset" onclick="reset()">RESET</button>
+          <div id="image">
+          </div>
+          <div id="details">
+            <h1>Hollow Knight Progress Checker</h1>
+            <h2>Progress: <span id="percent">0</span>%</h2>
+            <button id="reset" onclick="reset()">RESET</button>
+          </div>
         </header>
 
         <!--Lists give auto tab-->
@@ -500,7 +504,7 @@
             </div>
 
             <div id="other">
-              <h2>Other</h2>
+              <h2>Other (Not included in percentage)</h2>
               <ul>
                 <li>
                   <input type="checkbox" id="Swim Ability" name="Swim Ability">
