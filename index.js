@@ -26,7 +26,7 @@ const shards = document.querySelector('#mask_shards > h3');
 const shardPlus = document.querySelector('#shard_plus');
 const shardMinus = document.querySelector('#shard_minus');
 
-let elements = [...totalEl, fragments, shards]; //(...) spread operator works similarly to unpack operator in Python
+let elements = [...totalEl, fragments, shards, ...extraEl]; //(...) spread operator works similarly to unpack operator in Python
 let weightEl = [];
 let currentData = [];
 
@@ -91,6 +91,8 @@ class Weight {
                 weightEl.push(new Weight(e.id, 0.33));
             else if (e.id === 'Isma\'s Tear' || e.id === 'King\'s Brand' || e.id === 'Monarch Wings' || e.id === 'Shade Cloak')
                 weightEl.push(new Weight(e.id, 2));
+            else if (e.id === "Swim Ability" || e.id === "Tram Pass" || e.id === "Elevator Pass" || e.id === "Lumafly Lanturn")
+                weightEl.push(new Weight(e.id, 0));
             else
                 weightEl.push(new Weight(e.id, 1));
         });
@@ -114,7 +116,7 @@ function render(element, sign) {
     if (actualEl.checked || sign === '+') { //undefined = false
         if (actualEl.id === 'Fragments') { //Fragments + button activation/deactivation
             currFrags++;
-            console.log(currFrags);
+            //console.log(currFrags);
             if (currFrags % 3 === 0 && currFrags !== 0) { //case of 3 frags - 0.99
                 current += 0.01;
             }
