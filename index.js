@@ -1,8 +1,3 @@
-//FINISH - render and button synergy, make 4 weight objects (make key:value pair object)
-//  .toFixed returns a string and only works on numbers. When adding to the total it works but when you add again it fails since current is now a string
-
-//101 checkboxes without fragments or shards
-//101 + 16 + 9 = 126 total
 let current = 0;
 
 let currFrags = 0;
@@ -11,11 +6,8 @@ const maxFrags = 9;
 let currShards = 0;
 const maxShards = 16; 
 
-
-//css selectors work as in totalEl
-//querySelectorAll returns a node list hence why we can use [0]
 const percent = document.querySelector('#percent');
-const totalEl = document.querySelectorAll('div > div:not(#other) > ul > li > input'); //3 parts: div that has a parent div AND doesn't include div with id 'other' AND has a child ul which has a child li which has a child input 
+const totalEl = document.querySelectorAll('div > div:not(#other) > ul > li > input'); 
 const extraEl = document.querySelectorAll('div > div#other > ul > li > input');
 
 const fragments = document.querySelector('#vessel_fragments > h3');
@@ -72,11 +64,6 @@ if (savedData) {
         shardMinus.disabled = true;
     }
 }
-//localStorage
-//setItem(key, value)
-//getItem(key) -> value
-//JSON.stringify() -> converts JS to JSON object
-//JSON.parse() -> converts JSON object to JS
 
 class Weight {
     constructor(id, weight) {
@@ -104,7 +91,7 @@ Weight.assign(elements);
 //NodeLists have different functions to arrays
 function render(element, sign) {
     //Find the weighted object associated with the element
-    let weighted = weightEl.find((item) => { //Needs a boolean value to judge whether the item is the correct one
+    let weighted = weightEl.find((item) => {
         return element === item.id;
     });
 
@@ -113,10 +100,10 @@ function render(element, sign) {
         return item.id === weighted.id;
     });
 
-    if (actualEl.checked || sign === '+') { //undefined = false
+    if (actualEl.checked || sign === '+') {
         if (actualEl.id === 'Fragments') { //Fragments + button activation/deactivation
             currFrags++;
-            //console.log(currFrags);
+
             if (currFrags % 3 === 0 && currFrags !== 0) { //case of 3 frags - 0.99
                 current += 0.01;
             }
@@ -126,7 +113,7 @@ function render(element, sign) {
             if (currFrags >= maxFrags)
                 fragPlus.disabled = true;
 
-            if (fragMinus.disabled) //Re-enable minus button if disabled
+            if (fragMinus.disabled)
                 fragMinus.disabled = false; 
         }
         else if (actualEl.id === 'Shards') { //Shards + button activation/deactivation
@@ -137,7 +124,7 @@ function render(element, sign) {
             if (currShards >= maxShards)
                 shardPlus.disabled = true;
 
-            if (shardMinus.disabled) //Re-enables the button when adding
+            if (shardMinus.disabled)
                 shardMinus.disabled = false;
         }
 
@@ -149,10 +136,9 @@ function render(element, sign) {
             if (currFrags % 3 === 0 && currFrags != 0) { //3, 6, 9 only
                 current -= 0.01;
             }
-            currFrags--; //Decrement after checking but before printing
+            currFrags--;
             fragments.textContent = currFrags;
 
-            //Enable/Disable buttons if minimum reached
             if (currFrags <= 0)
                 fragMinus.disabled = true;
 
